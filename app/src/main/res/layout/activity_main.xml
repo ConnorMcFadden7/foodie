@@ -17,19 +17,47 @@
 
     <LinearLayout
         android:id="@+id/left_drawer"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_gravity="start"
         android:orientation="vertical" >
 
-        <!-- remember i can do stuff like drawableLeft=@drawable etc-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recipes"/>
+        <!-- remember i can do stuff like drawableLeft=@drawable etc
+        also remember to add touchstates-->
+        <RelativeLayout android:id="@+id/nav_drawer"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="#FFF">
 
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_meal"
+                android:text="@string/nav_drawer_meal" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_recipe"
+                android:layout_below="@+id/text_nav_meal"
+                android:text="@string/nav_drawer_recipe" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_grocery"
+                android:layout_below="@+id/text_nav_recipe"
+                android:text="@string/nav_drawer_grocery" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_about"
+                android:layout_below="@+id/text_nav_grocery"
+                android:text="@string/nav_drawer_about" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/text_nav_about"
+                android:background="@color/foodie_lighter_grey"
+                android:layout_marginTop="12dp"/>
+
+        </RelativeLayout>
     </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

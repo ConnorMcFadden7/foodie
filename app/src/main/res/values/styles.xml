@@ -12,4 +12,14 @@
     <style name="primaryTheme.ActionBar.Text" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/actionbar_text_white</item>
     </style>
+
+    <style name="NavDrawerNavItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@drawable/selector_nav_drawer_text</item>
+        <item name="android:drawablePadding">25dp</item>
+    </style>
 </resources>
