@@ -24,6 +24,7 @@
         android:layout_gravity="start"
         android:orientation="vertical" >
 
+        <!-- remember i can do stuff like drawableLeft=@drawable etc-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
