@@ -1,4 +1,7 @@
 package com.connormcfadden.foodie.ui.activity;
 
-public class MainActivity {
+import android.app.Activity;
+
+public class MainActivity extends Activity {
+
 }
