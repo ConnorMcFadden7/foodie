@@ -1,7 +1,6 @@
 package com.connormcfadden.foodie.ui.activity;
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -17,10 +16,11 @@ import butterknife.InjectView;
 
 public class MainActivity extends Activity {
 
-    private ActionBarDrawerToggle mDrawerToggle;
-
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+
+    private ActionBarDrawerToggle mDrawerToggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +56,6 @@ public class MainActivity extends Activity {
     }
 
     private void setupNavDrawer() {
-        //mNavDrawerLearn.setSelected(true);
-        //mNavDrawerLearn.setTypeface(Typeface.DEFAULT_BOLD);
-        //setListenerNavDrawerItems();
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
@@ -80,7 +77,6 @@ public class MainActivity extends Activity {
             }
         };
 
-       // mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
