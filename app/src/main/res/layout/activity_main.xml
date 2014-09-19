@@ -24,8 +24,7 @@
         android:layout_gravity="start"
         android:orientation="vertical" >
 
-        <!-- remember i can do stuff like drawableLeft=@drawable etc
-        also remember to add touchstates-->
+        <!--also remember to add touchstates-->
         <RelativeLayout android:id="@+id/nav_drawer"
             android:layout_width="300dp"
             android:layout_height="match_parent"
@@ -34,20 +33,24 @@
             <TextView
                 style="@style/NavDrawerNavItem"
                 android:id="@+id/text_nav_meal"
+                android:drawableLeft="@drawable/ic_nav_drawer_cal"
                 android:text="@string/nav_drawer_meal" />
             <TextView
                 style="@style/NavDrawerNavItem"
                 android:id="@+id/text_nav_recipe"
+                android:drawableLeft="@drawable/ic_nav_drawer_notes"
                 android:layout_below="@+id/text_nav_meal"
                 android:text="@string/nav_drawer_recipe" />
             <TextView
                 style="@style/NavDrawerNavItem"
                 android:id="@+id/text_nav_grocery"
+                android:drawableLeft="@drawable/ic_nav_drawer_bag"
                 android:layout_below="@+id/text_nav_recipe"
                 android:text="@string/nav_drawer_grocery" />
             <TextView
                 style="@style/NavDrawerNavItem"
                 android:id="@+id/text_nav_about"
+                android:drawableLeft="@drawable/ic_nav_drawer_about"
                 android:layout_below="@+id/text_nav_grocery"
                 android:text="@string/nav_drawer_about" />
             <View
