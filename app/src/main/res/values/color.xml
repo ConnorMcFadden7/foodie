@@ -2,4 +2,5 @@
 <resources>
     <color name="actionbar_bg_primary_orange">#CC6600</color>
     <color name="actionbar_text_white">#FFFFFF</color>
+    <color name="foodie_lighter_grey">#D4D4D4</color>
 </resources>

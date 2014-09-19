@@ -1,0 +1,66 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- recipe stuff -->
+
+    </RelativeLayout>
+
+    <!-- Nav drawer stuff -->
+
+    <LinearLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="start"
+        android:orientation="vertical" >
+
+        <!--also remember to add touchstates-->
+        <RelativeLayout android:id="@+id/nav_drawer"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="#FFF">
+
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_meal"
+                android:drawableLeft="@drawable/ic_nav_drawer_cal"
+                android:text="@string/nav_drawer_meal" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_recipe"
+                android:drawableLeft="@drawable/ic_nav_drawer_notes"
+                android:layout_below="@+id/text_nav_meal"
+                android:text="@string/nav_drawer_recipe" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_grocery"
+                android:drawableLeft="@drawable/ic_nav_drawer_bag"
+                android:layout_below="@+id/text_nav_recipe"
+                android:text="@string/nav_drawer_grocery" />
+            <TextView
+                style="@style/NavDrawerNavItem"
+                android:id="@+id/text_nav_about"
+                android:drawableLeft="@drawable/ic_nav_drawer_about"
+                android:layout_below="@+id/text_nav_grocery"
+                android:text="@string/nav_drawer_about" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/text_nav_about"
+                android:background="@color/foodie_lighter_grey"
+                android:layout_marginTop="12dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
