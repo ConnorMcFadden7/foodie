@@ -82,5 +82,27 @@ public class MainActivity extends Activity {
         getActionBar().setHomeButtonEnabled(true);
     }
 
-
+    private final View.OnClickListener navDrawerClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (!v.isSelected()) {
+                v.setSelected(true);
+                switch (v.getId()) {
+                    case R.id.text_nav_meal:
+                        //todo start fragment
+                        break;
+                    case R.id.text_nav_recipe:
+                        //todo start fragment
+                        break;
+                    case R.id.text_nav_grocery:
+                        //todo start fragment
+                        break;
+                    case R.id.text_nav_about:
+                        //todo start fragment
+                        break;
+                }
+            }
+            mDrawerLayout.closeDrawers();
+        }
+    };
 }
