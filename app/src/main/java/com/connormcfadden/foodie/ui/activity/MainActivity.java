@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
 
     private ActionBarDrawerToggle mDrawerToggle;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
