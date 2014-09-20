@@ -11,6 +11,13 @@
 
         <!-- recipe stuff -->
 
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/calendarView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
     <!-- Nav drawer stuff -->
@@ -61,6 +68,7 @@
                 android:layout_marginTop="12dp"/>
 
         </RelativeLayout>
+
     </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>
