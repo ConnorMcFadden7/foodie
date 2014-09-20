@@ -1,6 +1,7 @@
 package com.connormcfadden.foodie.ui.activity;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -8,8 +9,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.connormcfadden.foodie.R;
+import com.connormcfadden.foodie.ui.fragment.GroceryFragment;
+import com.connormcfadden.foodie.ui.fragment.MealFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -19,6 +23,18 @@ public class MainActivity extends Activity {
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
+    @InjectView(R.id.text_nav_meal)
+    TextView mTextNavMeal;
+
+    @InjectView(R.id.text_nav_recipe)
+    TextView mTextNavRecipe;
+
+    @InjectView(R.id.text_nav_grocery)
+    TextView mTextNavGrocery;
+
+    @InjectView(R.id.text_nav_about)
+    TextView mTextNavAbout;
+
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -26,6 +42,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+
+        if (savedInstanceState == null) {
+            addFragment(new MealFragment());
+        }
+
         setupNavDrawer();
     }
 
@@ -55,6 +76,7 @@ public class MainActivity extends Activity {
     }
 
     private void setupNavDrawer() {
+        setListenerNavDrawerItems();
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
@@ -82,6 +104,26 @@ public class MainActivity extends Activity {
         getActionBar().setHomeButtonEnabled(true);
     }
 
+    private void addFragment(Fragment fragment) {
+        getFragmentManager().beginTransaction()
+                .add(R.id.main_content_frame, fragment)
+                .commit();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        // Insert the fragment by replacing any existing fragment
+        getFragmentManager().beginTransaction()
+                .replace(R.id.main_content_frame, fragment)
+                .commit();
+    }
+
+    private void setListenerNavDrawerItems() {
+        mTextNavMeal.setOnClickListener(navDrawerClickListener);
+        mTextNavRecipe.setOnClickListener(navDrawerClickListener);
+        mTextNavGrocery.setOnClickListener(navDrawerClickListener);
+        mTextNavAbout.setOnClickListener(navDrawerClickListener);
+    }
+
     private final View.OnClickListener navDrawerClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -89,13 +131,13 @@ public class MainActivity extends Activity {
                 v.setSelected(true);
                 switch (v.getId()) {
                     case R.id.text_nav_meal:
-                        //todo start fragment
+                        replaceFragment(new MealFragment());
                         break;
                     case R.id.text_nav_recipe:
                         //todo start fragment
                         break;
                     case R.id.text_nav_grocery:
-                        //todo start fragment
+                        replaceFragment(new GroceryFragment());
                         break;
                     case R.id.text_nav_about:
                         //todo start fragment
