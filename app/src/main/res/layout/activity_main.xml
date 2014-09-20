@@ -6,19 +6,9 @@
 
     <!-- Main Content -->
     <RelativeLayout
+        android:id="@+id/main_content_frame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <!-- recipe stuff -->
-
-        <CalendarView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/calendarView"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"/>
 
     <!-- Nav drawer stuff -->
 
