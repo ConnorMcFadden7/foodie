@@ -30,9 +30,9 @@ public class FoodieDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_MEAL + "(" + KEY_MEAL_NAME + " TEXT,"
+        String CREATE_MEALS_TABLE = "CREATE TABLE " + TABLE_MEAL + "(" + KEY_MEAL_NAME + " TEXT,"
                 + KEY_MEAL_DATE + " TEXT," + KEY_MEAL_LOCATION + " TEXT," + KEY_MEAL_PHOTO + " TEXT" + ")";
-        db.execSQL(CREATE_CONTACTS_TABLE);
+        db.execSQL(CREATE_MEALS_TABLE);
     }
 
     @Override
@@ -52,7 +52,6 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Getting All Contacts
     public List<Meal> getAllMeals() {
         List<Meal> mealList = new ArrayList<Meal>();
         String selectQuery = "SELECT  * FROM " + TABLE_MEAL, ASC;
