@@ -6,6 +6,7 @@ public class Meal {
     public int date;
     public String ingredients;
     public String photo;
+    //todo will you really have photo in calendar?
 
     public Meal(){
 
