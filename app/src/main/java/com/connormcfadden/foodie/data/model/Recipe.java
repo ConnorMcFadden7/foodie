@@ -7,14 +7,14 @@ public class Recipe {
     //todo ingredients should probs be list of grocery
     public String name;
     public int cooking_time;
-    public List<String> ingredients;
+    public String ingredients;
     public String photo;
 
     public Recipe(){
 
     }
 
-    public Recipe(String name, int cooking_time, List<String> ingredients, String photo){
+    public Recipe(String name, int cooking_time, String ingredients, String photo){
         this.name = name;
         this.cooking_time = cooking_time;
         this.ingredients = ingredients;
@@ -37,11 +37,12 @@ public class Recipe {
         this.cooking_time = cooking_time;
     }
 
-    public List<String> getIngredients() {
+    //todo probs wont work cause it'll get entire list
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
