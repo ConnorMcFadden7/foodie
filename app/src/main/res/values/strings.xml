@@ -13,4 +13,10 @@
     <string name="nav_drawer_grocery">Groceries</string>
     <string name="nav_drawer_about">About Foodie</string>
 
+    <!-- Add Meal Dialog -->
+    <string name="add_meal_title">ADD MEAL</string>
+    <string name="add_meal_title_edit_text">Add meals:</string>
+    <string name="add_meal_button">ADD</string>
+    <string name="add_meal_button_cancel">CANCEL</string>
+
 </resources>
