@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:background="@drawable/card_dropshadow">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_recipe"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/walkthrough_memrise_logo"/>
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/foodie_primary_color"
+        android:textSize="18sp"
+        android:text="Memrise Meal"
+        android:layout_toRightOf="@+id/image_recipe"/>
+
+    <TextView
+        android:id="@+id/text_preparation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/image_recipe"
+        android:layout_below="@id/text_title"
+        android:textColor="@color/foodie_lighter_grey"
+        android:textSize="12sp"
+        android:text="Preperation 30 minutes"/>
+
+    <TextView
+        android:id="@+id/text_cooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/text_preparation"
+        android:layout_toRightOf="@+id/image_recipe"
+        android:textColor="@color/foodie_lighter_grey"
+        android:textSize="12sp"
+        android:text="Cooking 1 hour"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_more_info"/>
+
+</RelativeLayout>

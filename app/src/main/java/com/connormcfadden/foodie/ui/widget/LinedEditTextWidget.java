@@ -17,7 +17,7 @@ public class LinedEditTextWidget extends EditText {
         super(context, attributes);
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(getResources().getColor(R.color.actionbar_bg_primary_orange));
+        mPaint.setColor(getResources().getColor(R.color.foodie_primary_color));
     }
 
     //todo line is hardcoded atm, everytime 'Next' on keyboard is clicked it should update a counter which

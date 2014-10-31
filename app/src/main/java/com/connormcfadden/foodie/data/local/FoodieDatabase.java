@@ -32,7 +32,8 @@ public class FoodieDatabase extends SQLiteOpenHelper {
 
     //Recipe Vars
     private static final String KEY_RECIPE_NAME = "name";
-    private static final String KEY_RECIPE_COOKING_TIME = "date";
+    private static final String KEY_RECIPE_PREPARATION_TIME = "preparation";
+    private static final String KEY_RECIPE_COOKING_TIME = "cooking_time";
     private static final String KEY_RECIPE_INGREDIENTS = "ingredients";
     private static final String KEY_RECIPE_PHOTO = "photo";
 
@@ -49,8 +50,8 @@ public class FoodieDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_MEALS_TABLE = "CREATE TABLE " + TABLE_MEAL + "(" + KEY_MEAL_NAME + " TEXT,"
                 + KEY_MEAL_DATE + " TEXT," + KEY_MEAL_INGREDIENTS + " TEXT," + KEY_MEAL_PHOTO + " TEXT" + ")";
-        String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "(" + KEY_RECIPE_NAME + " TEXT,"
-                + KEY_RECIPE_COOKING_TIME + " TEXT," + KEY_RECIPE_INGREDIENTS + " TEXT," + KEY_RECIPE_PHOTO + " TEXT" + ")";
+        String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "(" + KEY_RECIPE_NAME + " TEXT," + KEY_RECIPE_PREPARATION_TIME
+                + " TEXT," + KEY_RECIPE_COOKING_TIME + " TEXT," + KEY_RECIPE_INGREDIENTS + " TEXT," + KEY_RECIPE_PHOTO + " TEXT" + ")";
         String CREATE_GROCERY_TABLE = "CREATE TABLE " + TABLE_GROCERY + "(" + KEY_GROCERY_ITEM + " TEXT,"
                 + KEY_GROCERY_ESTIMATED_PRICE + " TEXT," + KEY_GROCERY_FOOD_TYPE + " TEXT" + ")";
         db.execSQL(CREATE_MEALS_TABLE);
@@ -81,6 +82,7 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_RECIPE_NAME, recipe.getName());
+        values.put(KEY_RECIPE_PREPARATION_TIME, recipe.getPreparationTime());
         values.put(KEY_RECIPE_COOKING_TIME, recipe.getCookingTime());
         values.put(KEY_RECIPE_INGREDIENTS, recipe.getIngredients());
         values.put(KEY_RECIPE_PHOTO, recipe.getPhoto());
@@ -125,9 +127,10 @@ public class FoodieDatabase extends SQLiteOpenHelper {
             do {
                 Recipe recipe = new Recipe();
                 recipe.setName(cursor.getString(0));
-                recipe.setCookingTime(cursor.getInt(1));
-                recipe.setIngredients(cursor.getString(2));
-                recipe.setPhoto(cursor.getString(3));
+                recipe.setPreparationTime(cursor.getString(1));
+                recipe.setCookingTime(cursor.getString(2));
+                recipe.setIngredients(cursor.getString(3));
+                recipe.setPhoto(cursor.getString(4));
                 recipeList.add(recipe);
             } while (cursor.moveToNext());
         }
@@ -165,6 +168,7 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_RECIPE_NAME, recipe.getName());
+        values.put(KEY_RECIPE_PREPARATION_TIME, recipe.getPreparationTime());
         values.put(KEY_RECIPE_COOKING_TIME, recipe.getCookingTime());
         values.put(KEY_RECIPE_INGREDIENTS, recipe.getIngredients());
         values.put(KEY_RECIPE_PHOTO, recipe.getPhoto());

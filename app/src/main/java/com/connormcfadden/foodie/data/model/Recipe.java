@@ -6,7 +6,8 @@ public class Recipe {
 
     //todo ingredients should probs be list of grocery
     public String name;
-    public int cooking_time;
+    public String preparation_time;
+    public String cooking_time;
     public String ingredients;
     public String photo;
 
@@ -14,8 +15,9 @@ public class Recipe {
 
     }
 
-    public Recipe(String name, int cooking_time, String ingredients, String photo){
+    public Recipe(String name, String preparation_time, String cooking_time, String ingredients, String photo){
         this.name = name;
+        this.preparation_time = preparation_time;
         this.cooking_time = cooking_time;
         this.ingredients = ingredients;
         this.photo = photo;
@@ -29,11 +31,15 @@ public class Recipe {
         this.name = name;
     }
 
-    public int getCookingTime() {
+    public String getPreparationTime() { return preparation_time; }
+
+    public void setPreparationTime(String preparation) { this.preparation_time = preparation; }
+
+    public String getCookingTime() {
         return cooking_time;
     }
 
-    public void setCookingTime(int cooking_time) {
+    public void setCookingTime(String cooking_time) {
         this.cooking_time = cooking_time;
     }
 

@@ -27,7 +27,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="@string/add_meal_title_edit_text"
-            android:textColor="@color/actionbar_bg_primary_orange"
+            android:textColor="@color/foodie_primary_color"
             android:textStyle="bold"/>
 
         <EditText
@@ -68,7 +68,7 @@
                 android:paddingLeft="25dp"
                 android:gravity="center"
                 android:text="@string/add_meal_button"
-                android:textColor="@color/actionbar_bg_primary_orange"
+                android:textColor="@color/foodie_primary_color"
                 android:textStyle="bold"
                 android:clickable="true"
                 android:layout_weight="1"/>
