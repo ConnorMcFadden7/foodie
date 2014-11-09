@@ -1,9 +1,10 @@
 package com.connormcfadden.foodie.ui.activity;
 
-import android.app.Activity;
-import android.app.Fragment;
+import android.graphics.Typeface;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,11 +15,13 @@ import android.widget.TextView;
 import com.connormcfadden.foodie.R;
 import com.connormcfadden.foodie.ui.fragment.GroceryFragment;
 import com.connormcfadden.foodie.ui.fragment.MealFragment;
+import com.connormcfadden.foodie.ui.fragment.RecipeFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.Optional;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
     @InjectView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
@@ -42,12 +45,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-
+        setupNavDrawer();
         if (savedInstanceState == null) {
             addFragment(new MealFragment());
         }
-
-        setupNavDrawer();
     }
 
     @Override
@@ -55,6 +56,12 @@ public class MainActivity extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+     protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
     }
 
     @Override
@@ -76,6 +83,7 @@ public class MainActivity extends Activity {
     }
 
     private void setupNavDrawer() {
+        mTextNavMeal.setSelected(true);
         setListenerNavDrawerItems();
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
@@ -105,16 +113,27 @@ public class MainActivity extends Activity {
     }
 
     private void addFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_content_frame, fragment)
                 .commit();
     }
 
     private void replaceFragment(Fragment fragment) {
         // Insert the fragment by replacing any existing fragment
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_content_frame, fragment)
                 .commit();
+    }
+
+    private void deselectNavDrawerItems() {
+        mTextNavMeal.setSelected(false);
+        mTextNavMeal.setTypeface(Typeface.DEFAULT);
+        mTextNavRecipe.setSelected(false);
+        mTextNavRecipe.setTypeface(Typeface.DEFAULT);
+        mTextNavGrocery.setSelected(false);
+        mTextNavGrocery.setTypeface(Typeface.DEFAULT);
+        mTextNavAbout.setSelected(false);
+        mTextNavAbout.setTypeface(Typeface.DEFAULT);
     }
 
     private void setListenerNavDrawerItems() {
@@ -134,17 +153,17 @@ public class MainActivity extends Activity {
                         replaceFragment(new MealFragment());
                         break;
                     case R.id.text_nav_recipe:
-                        //todo start fragment
+                        replaceFragment(new RecipeFragment());
                         break;
                     case R.id.text_nav_grocery:
                         replaceFragment(new GroceryFragment());
                         break;
                     case R.id.text_nav_about:
-                        //todo start fragment
                         break;
                 }
             }
             mDrawerLayout.closeDrawers();
+            deselectNavDrawerItems();
         }
     };
 }

@@ -67,7 +67,7 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addMeal(Meal meal) {
+    public void addMeal(Meal meal) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_MEAL_NAME, meal.getName());
@@ -78,7 +78,7 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-    void addRecipe(Recipe recipe) {
+    public void addRecipe(Recipe recipe) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_RECIPE_NAME, recipe.getName());
@@ -90,7 +90,7 @@ public class FoodieDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-    void addGrocery(Grocery grocery) {
+    public void addGrocery(Grocery grocery) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_GROCERY_ITEM, grocery.getItem());

@@ -5,13 +5,26 @@
     android:layout_height="125dp"
     android:background="@drawable/card_dropshadow">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <RelativeLayout
         android:id="@+id/image_recipe"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:src="@drawable/walkthrough_memrise_logo"/>
+        android:layout_marginLeft="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_circle_recipe"
+            android:layout_width="85dp"
+            android:layout_height="85dp"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/add_photo"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/text_title"

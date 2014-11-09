@@ -19,4 +19,12 @@
     <string name="add_meal_button">ADD</string>
     <string name="add_meal_button_cancel">CANCEL</string>
 
+    <!-- Add Recipe Dialog -->
+    <string name="add_recipe_title">ADD RECIPE</string>
+    <string name="add_recipe_title_edit_text">Name:</string>
+    <string name="add_recipe_preparation_edit_text">Preparation:</string>
+    <string name="add_recipe_cooking_edit_text">Cooking Time:</string>
+    <string name="add_recipe_button">ADD</string>
+    <string name="add_recipe_button_cancel">CANCEL</string>
+
 </resources>

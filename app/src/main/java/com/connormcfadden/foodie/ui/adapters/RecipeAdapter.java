@@ -15,17 +15,17 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RecipeHolder extends BaseAdapter {
+public class RecipeAdapter extends BaseAdapter {
 
     private List<Recipe> mRecipes;
     private Context mContext;
 
-    public RecipeHolder(Context context) {
+    public RecipeAdapter(Context context) {
         this.mContext = context;
     }
 
-    public void setData(List<Recipe> meals) {
-        mRecipes = meals;
+    public void setData(List<Recipe> recipes) {
+        mRecipes = recipes;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class RecipeHolder extends BaseAdapter {
             convertView = li.inflate(R.layout.item_recipe, parent, false);
 
             holder = new ViewHolder();
-            holder.recipeImage = (CircleImageView) convertView.findViewById(R.id.image_recipe);
+            holder.recipeImage = (CircleImageView) convertView.findViewById(R.id.image_circle_recipe);
             holder.recipeTitle = (TextView) convertView.findViewById(R.id.text_title);
             holder.recipePreparation = (TextView) convertView.findViewById(R.id.text_preparation);
             holder.recipeCooking = (TextView) convertView.findViewById(R.id.text_cooking);
@@ -61,7 +61,7 @@ public class RecipeHolder extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Picasso.with(mContext).load(recipe.photo).into(holder.recipeImage);
+        //Picasso.with(mContext).load(recipe.photo).into(holder.recipeImage);
         holder.recipeTitle.setText(recipe.name);
         holder.recipePreparation.setText(recipe.preparation_time);
         holder.recipeCooking.setText(recipe.cooking_time);

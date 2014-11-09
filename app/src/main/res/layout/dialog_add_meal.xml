@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/add_meal_title"
+            android:text="@string/add_recipe_title"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -26,12 +26,48 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:text="@string/add_meal_title_edit_text"
+            android:text="@string/add_recipe_title_edit_text"
             android:textColor="@color/foodie_primary_color"
             android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/edit_text_meal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:id="@+id/text_meal_preparation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/add_recipe_preparation_edit_text"
+            android:textColor="@color/foodie_primary_color"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edit_text_meal_preparation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:id="@+id/text_meal_cooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/add_recipe_cooking_edit_text"
+            android:textColor="@color/foodie_primary_color"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edit_text_meal_cooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -47,7 +83,7 @@
                 android:id="@+id/text_cancel_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/add_meal_button_cancel"
+                android:text="@string/add_recipe_button_cancel"
                 android:paddingTop="20dp"
                 android:paddingLeft="25dp"
                 android:paddingBottom="20dp"
@@ -67,7 +103,7 @@
                 android:paddingBottom="20dp"
                 android:paddingLeft="25dp"
                 android:gravity="center"
-                android:text="@string/add_meal_button"
+                android:text="@string/add_recipe_button"
                 android:textColor="@color/foodie_primary_color"
                 android:textStyle="bold"
                 android:clickable="true"

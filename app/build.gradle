@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    buildToolsVersion '20.0.0'
 
     defaultConfig {
         applicationId "com.connormcfadden.foodie"
@@ -25,5 +25,6 @@ dependencies {
     compile 'com.android.support:support-v13:20.+'
     compile 'com.jakewharton:butterknife:5.1.+'
     compile 'de.hdodenhof:circleimageview:1.2.0'
+    compile project(':FadingActionBar')
     compile 'com.squareup.picasso:picasso:2.3.4'
 }
